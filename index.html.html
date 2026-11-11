@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thiago Filipe Matosinhos — Estudante de TI e Desenvolvimento de Sistemas</title>
+<meta name="description" content="Portfólio de estudante de Tecnologia da Informação e Análise e Desenvolvimento de Sistemas. Desenvolvimento, bancos de dados, suporte e e-commerce, com o futebol como inspiração visual.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080808;--fg:#F5F5F5;--green:#1c1c1c;--neon:#FFFFFF;--gray:#8c8c8c;--line:rgba(245,245,245,.12);color-scheme:dark;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#080808;--fg:#F5F5F5;--green:#1c1c1c;--neon:#FFFFFF;--gray:#8c8c8c}}
+:root[data-theme="dark"]{--bg:#080808;--fg:#F5F5F5}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:'Space Grotesk',system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--neon);outline-offset:3px}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gray)}
+.display{font-family:'Anton',Impact,sans-serif;text-transform:uppercase;line-height:.95;letter-spacing:.01em;margin:0}
+.neon{color:var(--neon)}
+.display .neon{color:transparent;-webkit-text-stroke:2px var(--neon)}
+section{padding:110px 6vw;max-width:1200px;margin:0 auto;position:relative}
+.label{display:flex;align-items:center;gap:12px;margin-bottom:34px}
+.label::before{content:"";width:34px;height:1px;background:var(--neon)}
+h2.display{font-size:clamp(2.4rem,6vw,4.6rem);margin-bottom:40px}
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:calc(14px + env(safe-area-inset-top,0px)) 6vw 14px;background:rgba(8,8,8,.72);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .logo{font-family:'Anton',sans-serif;font-size:1.3rem;letter-spacing:.04em}
+nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+nav ul a{font-family:'JetBrains Mono',monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gray);transition:color .25s}
+nav ul a:hover{color:var(--neon)}
+@media(max-width:760px){nav ul{gap:14px}nav ul li:nth-child(n+4){display:none}}
+/* hero */
+#hero{background:repeating-linear-gradient(90deg,rgba(245,245,245,.04) 0 70px,transparent 70px 140px);min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:130px;max-width:none;overflow:hidden}
+#hero>.inner{max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:2}
+.pitch{position:absolute;inset:0;opacity:.1;z-index:0;pointer-events:none}
+.pitch svg{width:100%;height:100%}
+.shirt{position:absolute;right:4vw;top:16%;font-family:'Anton',sans-serif;font-size:clamp(9rem,28vw,24rem);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(245,245,245,.3);z-index:1;user-select:none}
+.score{display:inline-flex;align-items:stretch;border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-bottom:34px;background:rgba(245,245,245,.06)}
+.score span{padding:8px 14px}
+.score .t{background:var(--neon);color:var(--bg);font-weight:700}
+.score .live{display:flex;align-items:center;gap:8px;color:var(--neon)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--neon);animation:pulse 1.6s infinite}
+@keyframes pulse{50%{opacity:.25;transform:scale(.7)}}
+h1.display{font-size:clamp(3rem,9.5vw,8rem);max-width:12ch}
+.line{display:block;overflow:hidden}
+.line>span{display:block;transform:translateY(105%);animation:up .9s cubic-bezier(.2,.8,.2,1) forwards}
+.line:nth-child(2)>span{animation-delay:.12s}.line:nth-child(3)>span{animation-delay:.24s}
+@keyframes up{to{transform:none}}
+.sub{max-width:520px;color:#c9c9c9;margin:30px 0}
+.meta{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border:1px solid var(--line);border-radius:999px;font-weight:500;transition:.3s}
+.btn:hover{border-color:var(--neon);color:var(--bg);background:var(--neon);transform:translateY(-2px)}
+.btn.main{background:var(--neon);color:var(--bg);border-color:var(--neon)}
+.btn.main:hover{background:transparent;color:var(--neon)}
+.ticker{position:absolute;bottom:0;left:0;right:0;border-top:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:10px 0;z-index:2;background:rgba(8,8,8,.6)}
+.ticker div{display:inline-block;animation:tick 32s linear infinite}
+.ticker span{margin:0 28px}
+@keyframes tick{to{transform:translateX(-50%)}}
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+/* about */
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:60px}
+.about p{color:#cfcfcf;margin:0 0 18px}
+.facts{border:1px solid var(--line);border-radius:10px;padding:26px;align-self:start;background:linear-gradient(160deg,rgba(245,245,245,.08),transparent 70%)}
+.facts dl{margin:0}.facts div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px dashed var(--line)}
+.facts div:last-child{border:0}.facts dt{color:var(--gray)}.facts dd{margin:0;text-align:right}
+@media(max-width:800px){.about{grid-template-columns:1fr;gap:34px}}
+/* projects */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}
+.card{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#0e0e0e;transition:transform .4s,border-color .4s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-8px);border-color:var(--neon)}
+.thumb{aspect-ratio:16/10;background:repeating-linear-gradient(90deg,#1f1f1f 0 26px,#0a0a0a 26px 52px);position:relative;display:grid;place-items:center;overflow:hidden}
+.thumb svg{position:absolute;inset:0;width:100%;height:100%;opacity:.25;transition:transform .6s}
+.card:hover .thumb svg{transform:scale(1.12)}
+.thumb b{font-family:'Anton',sans-serif;font-size:3.2rem;color:rgba(245,245,245,.9);position:relative}
+.rd{position:absolute;top:12px;left:12px;padding:3px 10px;background:var(--bg);border-radius:4px;color:var(--neon)}
+.card .body{padding:22px;display:flex;flex-direction:column;gap:12px;flex:1}
+.card h3{margin:0;font-size:1.3rem}
+.card p{margin:0;color:#b9b9b9;font-size:.94rem}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{border:1px solid var(--line);border-radius:4px;padding:2px 8px}
+.card ul{margin:0;padding-left:18px;color:#b9b9b9;font-size:.9rem}
+.card .links{margin-top:auto;display:flex;gap:18px;padding-top:10px;border-top:1px solid var(--line)}
+.card .links a{color:var(--fg);font-size:.9rem;transition:color .2s}.card .links a:hover{color:var(--neon)}
+.status{margin-left:auto;color:var(--neon)}
+/* stack */
+.stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.col{padding:26px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);margin:0 -1px -1px 0}
+.col h3{margin:0 0 16px;font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--neon);font-weight:500}
+.col li{list-style:none;padding:7px 0;transition:transform .25s,color .25s;display:flex;align-items:center;gap:10px}
+.col li::before{content:"";width:6px;height:6px;border:1px solid var(--neon);border-radius:50%}
+.col li:hover{transform:translateX(6px);color:var(--neon)}
+.col ul{margin:0;padding:0}
+/* timeline */
+.tl{position:relative;padding-left:34px;border-left:1px solid var(--line);margin-left:6px}
+.ev{position:relative;padding:0 0 38px}
+.ev::before{content:"";position:absolute;left:-40px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--neon)}
+.ev.now::before{background:var(--neon);box-shadow:0 0 0 6px rgba(245,245,245,.15)}
+.ev h3{margin:4px 0 4px;font-size:1.25rem}.ev p{margin:0;color:#b9b9b9;max-width:560px}
+/* football */
+.fb{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.fb div{padding:24px;border:1px solid var(--line);border-radius:10px;transition:background .3s}
+.fb div:hover{background:rgba(245,245,245,.07)}
+.fb h3{margin:0 0 10px;font-size:.78rem}.fb p{margin:0;color:#d4d4d4}
+/* contact */
+#contact{text-align:center;padding-bottom:70px}
+#contact h2{font-size:clamp(3rem,10vw,8.5rem);margin-bottom:30px}
+.mail{font-size:clamp(1.1rem,3vw,1.8rem);border-bottom:1px solid var(--neon);padding-bottom:4px;transition:color .25s}
+.mail:hover{color:var(--neon)}
+.chan{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin:36px 0 60px}
+.whistle{border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,.line>span{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav aria-label="Principal">
+  <a class="logo" href="#hero" aria-label="Início">TM<span class="neon">.</span>10</a>
+  <ul>
+    <li><a href="#about">Sobre</a></li><li><a href="#projects">Projetos</a></li><li><a href="#stack">Stack</a></li>
+    <li><a href="#learning">Jornada</a></li><li><a href="#football">Futebol</a></li><li><a href="#contact">Contato</a></li>
+  </ul>
+</nav>
+
+<main>
+<section id="hero">
+  <div class="pitch" aria-hidden="true"><svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" fill="none" stroke="#F5F5F5" stroke-width="2"><rect x="60" y="60" width="1080" height="680"/><line x1="600" y1="60" x2="600" y2="740"/><circle cx="600" cy="400" r="110"/><rect x="60" y="230" width="190" height="340"/><rect x="950" y="230" width="190" height="340"/><rect x="60" y="320" width="70" height="160"/><rect x="1070" y="320" width="70" height="160"/></svg></div>
+  <div class="shirt" aria-hidden="true">10</div>
+  <div class="inner">
+    <div class="score mono rv" role="status">
+      <span class="t">TI</span><span>ESTUDANTE · 2026</span><span class="live"><i class="dot"></i>ABERTO A OPORTUNIDADES</span>
+    </div>
+    <h1 class="display">
+      <span class="line"><span>Entre códigos</span></span>
+      <span class="line"><span>e paixão <span class="neon">pelo jogo.</span></span></span>
+    </h1>
+    <p class="sub rv"><strong>Thiago Filipe Martins Matosinhos</strong> — estudante de Análise e Desenvolvimento de Sistemas, em busca de uma oportunidade na área de Tecnologia da Informação: desenvolvimento, bancos de dados, suporte técnico e e-commerce. Foco em aprendizado contínuo e na entrega de soluções de qualidade.</p>
+    <div class="meta rv">
+      <a class="btn main" href="#projects">Ver projetos →</a>
+      <a class="btn" href="https://github.com/seu-usuario" rel="noopener">GitHub</a>
+      <a class="btn" href="https://linkedin.com/in/seu-usuario" rel="noopener">LinkedIn</a>
+      <span class="mono">📍 Belo Horizonte, MG — Brasil</span>
+    </div>
+  </div>
+  <div class="ticker mono" aria-hidden="true"><div id="tk"></div></div>
+</section>
+
+<section id="about">
+  <div class="label mono rv">01 / Sobre mim</div>
+  <div class="about">
+    <div class="rv">
+      <h2 class="display">Estudante de código, <span class="neon">torcedor</span> por natureza.</h2>
+      <p>Sou estudante do curso superior em Análise e Desenvolvimento de Sistemas, moro em Belo Horizonte e busco minha oportunidade na área de Tecnologia da Informação, em vagas de desenvolvimento de software, bancos de dados, suporte técnico ou áreas afins.</p>
+      <p>Também sou empreendedor: crio e mantenho uma loja virtual própria em Shopify e WordPress, o que me colocou em contato com a web na prática, do cadastro de produtos e banners ao atendimento a clientes e à gestão de pedidos.</p>
+      <p>Estudo e uso Python e JavaScript, trabalho com bancos de dados (MySQL, SQL Server e PostgreSQL) e versiono meus projetos com Git e GitHub. Também tenho experiência com suporte remoto (TeamViewer e AnyDesk) e atendimento a clientes. Sou proativo, me adapto rápido a novos sistemas e gosto de trabalhar em equipe, aplicando e aprimorando minhas competências para contribuir com o crescimento da empresa.</p>
+      <p>[Futebol] Uma frase sobre o que o futebol ensinou a você: foco, trabalho em equipe, paciência.</p>
+    </div>
+    <aside class="facts rv" aria-label="Resumo">
+      <dl>
+        <div><dt>Foco</dt><dd>Tecnologia da Informação</dd></div>
+        <div><dt>Formação</dt><dd>Análise e Desenvolvimento de Sistemas (em andamento)</dd></div>
+        <div><dt>Interesses</dt><dd>Desenvolvimento, bancos de dados, suporte técnico</dd></div>
+        <div><dt>Local</dt><dd>Belo Horizonte, MG</dd></div>
+        <div><dt>Idiomas</dt><dd>Inglês B1 · Espanhol B1</dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="label mono rv">02 / Projetos</div>
+  <h2 class="display rv">Fase de grupos<span class="neon">.</span></h2>
+  <p class="mono rv" style="margin:-20px 0 34px">Conteúdo demonstrativo — substitua por seus projetos reais.</p>
+  <div class="grid">
+    <article class="card rv">
+      <div class="thumb"><svg viewBox="0 0 200 120" fill="none" stroke="#F5F5F5" stroke-width="1"><circle cx="100" cy="60" r="30"/><line x1="100" y1="0" x2="100" y2="120"/><rect x="0" y="30" width="30" height="60"/><rect x="170" y="30" width="30" height="60"/></svg><span class="rd mono">Rodada 01</span><b>P1</b></div>
+      <div class="body"><h3>Nome do Projeto 1</h3><p>Descrição curta do que o projeto resolve e qual foi seu papel.</p>
+        <div class="tags mono"><span>React</span><span>TypeScript</span><span>API</span></div>
+        <ul><li>Funcionalidade principal</li><li>Funcionalidade secundária</li></ul>
+        <div class="links"><a href="#" aria-label="Demo do projeto 1">Demo ↗</a><a href="#" aria-label="GitHub do projeto 1">GitHub ↗</a><span class="status mono">Em andamento</span></div></div>
+    </article>
+    <article class="card rv">
+      <div class="thumb"><svg viewBox="0 0 200 120" fill="none" stroke="#F5F5F5" stroke-width="1"><circle cx="100" cy="60" r="30"/><line x1="100" y1="0" x2="100" y2="120"/><rect x="0" y="30" width="30" height="60"/><rect x="170" y="30" width="30" height="60"/></svg><span class="rd mono">Rodada 02</span><b>P2</b></div>
+      <div class="body"><h3>Nome do Projeto 2</h3><p>Descrição curta do projeto, do problema e da solução.</p>
+        <div class="tags mono"><span>Node.js</span><span>PostgreSQL</span></div>
+        <ul><li>Funcionalidade principal</li><li>Funcionalidade secundária</li></ul>
+        <div class="links"><a href="#" aria-label="Demo do projeto 2">Demo ↗</a><a href="#" aria-label="GitHub do projeto 2">GitHub ↗</a><span class="status mono">Concluído</span></div></div>
+    </article>
+    <article class="card rv">
+      <div class="thumb"><svg viewBox="0 0 200 120" fill="none" stroke="#F5F5F5" stroke-width="1"><circle cx="100" cy="60" r="30"/><line x1="100" y1="0" x2="100" y2="120"/><rect x="0" y="30" width="30" height="60"/><rect x="170" y="30" width="30" height="60"/></svg><span class="rd mono">Rodada 03</span><b>P3</b></div>
+      <div class="body"><h3>Nome do Projeto 3</h3><p>Descrição curta do projeto e dos aprendizados.</p>
+        <div class="tags mono"><span>Next.js</span><span>Tailwind</span></div>
+        <ul><li>Funcionalidade principal</li><li>Funcionalidade secundária</li></ul>
+        <div class="links"><a href="#" aria-label="Demo do projeto 3">Demo ↗</a><a href="#" aria-label="GitHub do projeto 3">GitHub ↗</a><span class="status mono">Planejado</span></div></div>
+    </article>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="label mono rv">03 / Tecnologias</div>
+  <h2 class="display rv">O elenco<span class="neon">.</span></h2>
+  <div class="stack rv">
+    <div class="col"><h3>Front-end</h3><ul><li>HTML</li><li>CSS</li><li>JavaScript</li></ul></div>
+    <div class="col"><h3>Back-end</h3><ul><li>Python</li></ul></div>
+    <div class="col"><h3>Banco de dados</h3><ul><li>MySQL</li><li>SQL Server</li><li>PostgreSQL</li></ul></div>
+    <div class="col"><h3>Ferramentas</h3><ul><li>Git</li><li>GitHub</li><li>Visual Studio Code</li></ul></div>
+    <div class="col"><h3>Outros</h3><ul><li>Shopify &amp; WordPress</li><li>Suporte remoto: TeamViewer, AnyDesk</li><li>Inglês e Espanhol (B1)</li></ul></div>
+  </div>
+  <p class="mono rv" style="margin-top:18px">Sistemas operacionais: Windows.</p>
+</section>
+
+<section id="learning">
+  <div class="label mono rv">04 / Experiência &amp; aprendizado</div>
+  <h2 class="display rv">Temporada <span class="neon">de evolução.</span></h2>
+  <div class="tl">
+    <div class="ev rv"><span class="mono">Formação base</span><h3>Ensino Médio completo</h3><p>Base escolar concluída.</p></div>
+    <div class="ev rv"><span class="mono">Formação técnica</span><h3>Curso Técnico em Eletromecânica</h3><p>Formação técnica realizada na MRS Logística.</p></div>
+    <div class="ev rv"><span class="mono">Experiência</span><h3>Empreendedor — loja virtual própria</h3><p>Shopify e WordPress: criação e manutenção da loja, banners, cadastro de produtos, atendimento a clientes, gestão de pedidos e fornecedores.</p></div>
+    <div class="ev now rv"><span class="mono neon">Em andamento</span><h3>Análise e Desenvolvimento de Sistemas</h3><p>Curso superior em andamento, com foco em Python, JavaScript e bancos de dados.</p></div>
+  </div>
+</section>
+
+<section id="football">
+  <div class="label mono rv">05 / Fora do código</div>
+  <h2 class="display rv">Intervalo<span class="neon">.</span></h2>
+  <div class="fb">
+    <div class="rv"><h3 class="mono">Times que acompanho</h3><p>Seu time do coração</p></div>
+    <div class="rv"><h3 class="mono">Jogadores favoritos</h3><p>Nomes que você admira</p></div>
+    <div class="rv"><h3 class="mono">Competições</h3><p>Brasileirão, Libertadores, Copa…</p></div>
+    <div class="rv"><h3 class="mono">Momento marcante</h3><p>Aquele jogo que você nunca esqueceu</p></div>
+  </div>
+  <p class="mono rv" style="margin-top:18px">Dica: adicione fotos de estádios que você tenha direito de usar.</p>
+</section>
+
+<section id="contact">
+  <div class="label mono rv" style="justify-content:center">06 / Contato</div>
+  <h2 class="display rv">Let’s build<br><span class="neon">something great.</span></h2>
+  <a class="mail rv" href="mailto:thiagofilipemm32@gmail.com">thiagofilipemm32@gmail.com</a>
+  <div class="chan rv">
+    <a class="btn" href="https://github.com/seu-usuario" rel="noopener">GitHub</a>
+    <a class="btn" href="https://linkedin.com/in/seu-usuario" rel="noopener">LinkedIn</a>
+    <a class="btn" href="tel:+5531995055442">(31) 9 9505-5442</a>
+  </div>
+  <div class="whistle mono"><span>© 2026 Thiago Filipe Matosinhos</span><span>⏱ Apito final — obrigado pela visita.</span></div>
+</section>
+</main>
+
+<script>
+(function(){
+  var items=["Estudante de TI e desenvolvimento","Aberto a oportunidades","Football meets development","Construindo experiências digitais","Inspirado pelo jogo bonito"];
+  var h="";for(var r=0;r<2;r++)items.forEach(function(t){h+="<span>"+t+"</span><span class='neon'>●</span>"});
+  document.getElementById("tk").innerHTML=h+h;
+  var els=document.querySelectorAll(".rv");
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+    els.forEach(function(el){io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add("in")})}
+})();
+</script>
+</body>
+</html>
